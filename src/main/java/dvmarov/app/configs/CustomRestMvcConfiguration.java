@@ -14,7 +14,9 @@ class CustomRestMvcConfiguration {
 
             @Override
             public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
-                config.setBasePath("/api");
+                config.setBasePath("/api")
+                    .setDefaultPageSize(10)
+                    .setMaxPageSize(1000);
             }
         };
     }
