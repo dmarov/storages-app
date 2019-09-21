@@ -6,7 +6,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@RepositoryRestResource(collectionResourceRel = "items", path = "categories")
+@RepositoryRestResource(collectionResourceRel = "categories", path = "/categories")
 public interface Category extends PagingAndSortingRepository<dvmarov.app.resources.Category, Long> {
 
 }

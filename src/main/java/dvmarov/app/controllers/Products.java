@@ -3,33 +3,34 @@ package dvmarov.app.controllers;
 import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/products")
 public class Products
 {
 
-    @GetMapping("/")
-    String getProducts() {
-        return "Hello World!";
-    }
+    // @GetMapping
+    // List<dvmarov.app.resources.Product> getProducts() {
+    //     return new dvmarov.app.resources.Product();
+    // }
 
-    @PostMapping("/")
+    @PostMapping
     String appendProduct() {
         return "Hello World!";
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("{id}")
     String getProduct() {
         return "Hello World!";
     }
 
-    @PatchMapping("/{id}")
+    @PatchMapping("{id}")
     String patchProduct() {
         return "Hello World!";
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("{id}")
     String deleteProduct() {
         return "Hello World!";
     }

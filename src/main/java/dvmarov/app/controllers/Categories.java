@@ -3,15 +3,20 @@ package dvmarov.app.controllers;
 import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
+import java.util.ArrayList;
 
-@RestController
-@RequestMapping("/api/categories")
-public class Categories
-{
+// @RestController
+// @RequestMapping("/api/categories")
+public class Categories {
 
-    // @GetMapping(produces = "application/hal+json")
-    // String getCategories() {
-    //     return "Hello World!";
+    // private dvmarov.app.repositories.Category repository;
+
+    // List<dvmarov.app.resources.Category> getCategories() {
+
+    //     List<dvmarov.app.resources.Category> result = repository.findAll();
+
+    //     return result;
     // }
 
     // @PostMapping
