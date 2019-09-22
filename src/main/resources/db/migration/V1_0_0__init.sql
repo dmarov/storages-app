@@ -1,26 +1,5 @@
 -- Adminer 4.7.3 PostgreSQL dump
 
-DROP TABLE IF EXISTS "flyway_schema_history";
-CREATE TABLE "public"."flyway_schema_history" (
-    "installed_rank" integer NOT NULL,
-    "version" character varying(50),
-    "description" character varying(200) NOT NULL,
-    "type" character varying(20) NOT NULL,
-    "script" character varying(1000) NOT NULL,
-    "checksum" integer,
-    "installed_by" character varying(100) NOT NULL,
-    "installed_on" timestamp DEFAULT now() NOT NULL,
-    "execution_time" integer NOT NULL,
-    "success" boolean NOT NULL,
-    CONSTRAINT "flyway_schema_history_pk" PRIMARY KEY ("installed_rank")
-) WITH (oids = false);
-
-CREATE INDEX "flyway_schema_history_s_idx" ON "public"."flyway_schema_history" USING btree ("success");
-
-INSERT INTO "flyway_schema_history" ("installed_rank", "version", "description", "type", "script", "checksum", "installed_by", "installed_on", "execution_time", "success") VALUES
-(1,	'1.0.0',	'init',	'SQL',	'V1.0.0__init.sql',	-1122310854,	'storages-app',	'2019-09-21 13:19:18.852555',	77,	't'),
-(2,	'1.0.0',	'init',	'SQL',	'V1_0_0__init.sql',	619843683,	'storages-app',	'2019-09-22 11:43:36.354118',	102,	't');
-
 DROP TABLE IF EXISTS "storage_category";
 DROP SEQUENCE IF EXISTS storage_group_id_seq;
 CREATE SEQUENCE storage_group_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1;
@@ -69,21 +48,31 @@ INSERT INTO "storage_product" ("id", "category_id", "title", "description", "pri
 (8,	6,	'двп',	'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',	'$200.00',	1000,	'https://images.ru.prom.st/466558279_w640_h640_dvp-orgalit-2745h1700h32mm.jpg'),
 (10,	6,	'битум',	'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',	'$1,000.00',	10,	'http://www.cdvor.ru/media/catalog/100720.jpg');
 
-DROP TABLE IF EXISTS "storage_user";
-DROP SEQUENCE IF EXISTS storage_user_id_seq;
-CREATE SEQUENCE storage_user_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1;
-
-CREATE TABLE "public"."storage_user" (
-    "id" integer DEFAULT nextval('storage_user_id_seq') NOT NULL,
-    "login" text NOT NULL,
-    "role" text NOT NULL,
-    "password_hash" text NOT NULL,
-    CONSTRAINT "storage_user_id" PRIMARY KEY ("id"),
-    CONSTRAINT "storage_user_login" UNIQUE ("login")
+DROP TABLE IF EXISTS "user";
+CREATE TABLE "public"."user" (
+    "username" character varying(50) NOT NULL,
+    "password" character varying(100) NOT NULL,
+    "enabled" boolean NOT NULL,
+    CONSTRAINT "user_username" PRIMARY KEY ("username")
 ) WITH (oids = false);
 
-INSERT INTO "storage_user" ("id", "login", "role", "password_hash") VALUES
-(1,	'admin',	'admin',	'c4ca4238a0b923820dcc509a6f75849b'),
-(2,	'user',	'user',	'c81e728d9d4c2f636f067f89cc14862c');
+INSERT INTO "user" ("username", "password", "enabled") VALUES
+('admin',	'$2a$10$WeMKiZl2VHpLpCyovCgBSuh6l.mK1fEgpIBeFVOKKQGPYHA.K9pS6',	't'),
+('user',	'$2a$10$WeMKiZl2VHpLpCyovCgBSuh6l.mK1fEgpIBeFVOKKQGPYHA.K9pS6',	't');
 
--- 2019-09-22 08:47:30.386067+00
+DROP TABLE IF EXISTS "user_roles";
+DROP SEQUENCE IF EXISTS user_roles_user_role_id_seq;
+CREATE SEQUENCE user_roles_user_role_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1;
+
+CREATE TABLE "public"."user_roles" (
+    "user_role_id" integer DEFAULT nextval('user_roles_user_role_id_seq') NOT NULL,
+    "username" character varying(50) NOT NULL,
+    "role" character varying(50) NOT NULL,
+    CONSTRAINT "user_roles_username_fkey" FOREIGN KEY (username) REFERENCES "user"(username) ON UPDATE CASCADE ON DELETE CASCADE NOT DEFERRABLE
+) WITH (oids = false);
+
+INSERT INTO "user_roles" ("user_role_id", "username", "role") VALUES
+(1,	'user',	'ROLE_USER'),
+(2,	'admin',	'ROLE_ADMIN');
+
+-- 2019-09-22 16:59:42.056917+00
