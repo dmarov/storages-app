@@ -5,6 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
+import java.util.List;
 
 @Entity
 @Table(name = "storage_product")
@@ -19,6 +22,10 @@ public class Product {
     private String price;
     private String count;
     private String imageUrl;
+
+    @ManyToOne
+    @JoinColumn(name="category_id")
+    private Category category;
 
     public String getTitle() {
 
