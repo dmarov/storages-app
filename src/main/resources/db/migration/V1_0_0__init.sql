@@ -18,7 +18,8 @@ CREATE TABLE "public"."flyway_schema_history" (
 CREATE INDEX "flyway_schema_history_s_idx" ON "public"."flyway_schema_history" USING btree ("success");
 
 INSERT INTO "flyway_schema_history" ("installed_rank", "version", "description", "type", "script", "checksum", "installed_by", "installed_on", "execution_time", "success") VALUES
-(1,	'1.0.0',	'init',	'SQL',	'V1.0.0__init.sql',	-1122310854,	'storages-app',	'2019-09-21 13:19:18.852555',	77,	't');
+(1,	'1.0.0',	'init',	'SQL',	'V1.0.0__init.sql',	-1122310854,	'storages-app',	'2019-09-21 13:19:18.852555',	77,	't'),
+(2,	'1.0.0',	'init',	'SQL',	'V1_0_0__init.sql',	619843683,	'storages-app',	'2019-09-22 11:43:36.354118',	102,	't');
 
 DROP TABLE IF EXISTS "storage_category";
 DROP SEQUENCE IF EXISTS storage_group_id_seq;
@@ -85,4 +86,4 @@ INSERT INTO "storage_user" ("id", "login", "role", "password_hash") VALUES
 (1,	'admin',	'admin',	'c4ca4238a0b923820dcc509a6f75849b'),
 (2,	'user',	'user',	'c81e728d9d4c2f636f067f89cc14862c');
 
--- 2019-09-22 06:55:11.789604+00
+-- 2019-09-22 08:47:30.386067+00
