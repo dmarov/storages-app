@@ -1,1 +1,3 @@
 target
+vue-app/node_modules
+vue-app/yarn-error.log
