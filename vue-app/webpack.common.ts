@@ -7,8 +7,8 @@ import VueLoaderPlugin from 'vue-loader/lib/plugin';
 const config: webpack.Configuration = {
 
     entry: {
-        "js/polyfills": './src/js/polyfills.ts',
-        "js/app": './src/js/index.ts'
+        "js/polyfills": './src/js/polyfills.js',
+        "js/app": './src/js/index.js'
     },
     module: {
         rules: [
