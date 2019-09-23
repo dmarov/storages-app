@@ -20,7 +20,7 @@ public class Product {
     private String title;
     private String description;
     private String price;
-    private String count;
+    private Integer count;
     private String imageUrl;
 
     @ManyToOne
@@ -57,12 +57,12 @@ public class Product {
         this.price = price;
     }
 
-    public String getCount() {
+    public Integer getCount() {
 
         return count;
     }
 
-    public void setCount(String count) {
+    public void setCount(Integer count) {
 
         this.count = count;
     }
