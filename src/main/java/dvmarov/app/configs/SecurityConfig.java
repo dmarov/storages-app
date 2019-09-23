@@ -10,6 +10,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.context.annotation.Bean;
 
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -18,23 +21,32 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
 
         auth.inMemoryAuthentication()
-            .withUser("user").password("{noop}1").roles("USER")
+            .passwordEncoder(passwordEncoder())
+            .withUser("user").password("$2a$10$N8hMO.ANJw9270DVWWimcOiiO1RxFIThEcewLsakH.I7BxMOtLUKO").roles("USER")
             .and()
-            .withUser("admin").password("{noop}2").roles("ADMIN");
+            .withUser("admin").password("$2a$10$jkvJAwejmBIqY/5lnHdonOo1Qjeog7ZHQq3heornXcV8xIwtSsG5K").roles("ADMIN");
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-    http.httpBasic().and()
+    http.httpBasic()
+        .and()
         .authorizeRequests()
         .antMatchers(HttpMethod.GET, "/api/**").hasAnyRole("USER", "ADMIN")
         .antMatchers(HttpMethod.POST, "/api/**").hasRole("ADMIN")
         .antMatchers(HttpMethod.PUT, "/api/**").hasRole("ADMIN")
         .antMatchers(HttpMethod.PATCH, "/api/**").hasRole("ADMIN")
-        .antMatchers(HttpMethod.DELETE, "/api/**").hasRole("ADMIN").and()
+        .antMatchers(HttpMethod.DELETE, "/api/**").hasRole("ADMIN")
+        .and()
         .csrf().disable()
         .sessionManagement()
         .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+
+        return new BCryptPasswordEncoder();
     }
 }

@@ -57,22 +57,23 @@ CREATE TABLE "public"."user" (
 ) WITH (oids = false);
 
 INSERT INTO "user" ("username", "password", "enabled") VALUES
-('admin',	'$2a$10$WeMKiZl2VHpLpCyovCgBSuh6l.mK1fEgpIBeFVOKKQGPYHA.K9pS6',	't'),
-('user',	'$2a$10$WeMKiZl2VHpLpCyovCgBSuh6l.mK1fEgpIBeFVOKKQGPYHA.K9pS6',	't');
+('user',	'$2a$10$N8hMO.ANJw9270DVWWimcOiiO1RxFIThEcewLsakH.I7BxMOtLUKO',	't'),
+('admin',	'$2a$10$jkvJAwejmBIqY/5lnHdonOo1Qjeog7ZHQq3heornXcV8xIwtSsG5K',	't');
 
-DROP TABLE IF EXISTS "user_roles";
+DROP TABLE IF EXISTS "user_role";
 DROP SEQUENCE IF EXISTS user_roles_user_role_id_seq;
 CREATE SEQUENCE user_roles_user_role_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1;
 
-CREATE TABLE "public"."user_roles" (
+CREATE TABLE "public"."user_role" (
     "user_role_id" integer DEFAULT nextval('user_roles_user_role_id_seq') NOT NULL,
     "username" character varying(50) NOT NULL,
     "role" character varying(50) NOT NULL,
+    CONSTRAINT "user_roles_user_role_id" PRIMARY KEY ("user_role_id"),
     CONSTRAINT "user_roles_username_fkey" FOREIGN KEY (username) REFERENCES "user"(username) ON UPDATE CASCADE ON DELETE CASCADE NOT DEFERRABLE
 ) WITH (oids = false);
 
-INSERT INTO "user_roles" ("user_role_id", "username", "role") VALUES
+INSERT INTO "user_role" ("user_role_id", "username", "role") VALUES
 (1,	'user',	'ROLE_USER'),
 (2,	'admin',	'ROLE_ADMIN');
 
--- 2019-09-22 16:59:42.056917+00
+-- 2019-09-23 16:56:21.218476+00
