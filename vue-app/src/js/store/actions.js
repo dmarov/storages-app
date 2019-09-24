@@ -5,4 +5,8 @@ export default {
         context.commit('init', params);
         context.dispatch('categories/init');
     },
+    setAuthToken(context, token) {
+
+        context.commit('setAuthToken', token);
+    },
 };

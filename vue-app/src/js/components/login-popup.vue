@@ -1,4 +1,5 @@
 <script>
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
 
@@ -8,11 +9,26 @@ export default {
             password: undefined,
         };
     },
+    computed: {
+        ...mapGetters([
+            'getUserName',
+            'getUserPassword',
+        ]),
+    },
     methods: {
+        ...mapActions([
+            'setAuthToken',
+        ]),
         setUser() {
-        
-        
+
+            let token = btoa(this.username + ':' + this.password);
+            this.setAuthToken(token);
         }
+    },
+    created() {
+
+        this.username = this.getUserName();
+        this.password = this.getUserPassword();
     },
 }
 
