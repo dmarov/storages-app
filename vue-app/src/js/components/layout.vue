@@ -1,14 +1,12 @@
 <script>
 
 import Menu from './menu';
-import Content from './content';
 import Toolbar from './toolbar';
 
 export default {
 
     components: {
         'app-menu': Menu,
-        'app-content': Content,
         'app-toolbar': Toolbar,
     },
 };
@@ -19,5 +17,6 @@ export default {
     .container
         app-toolbar
         app-menu
-        app-content
+        .content
+            router-view
 </template>

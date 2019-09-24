@@ -7,6 +7,6 @@ export default {
 </script>
 <template lang='pug'>
 
-    .content
+    .items Products
 
 </template>
