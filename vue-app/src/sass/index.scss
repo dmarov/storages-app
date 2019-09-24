@@ -1,0 +1,12 @@
+@import "const/_colors.scss";
+
+body {
+    background-color: $col-white;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+
+    width: 1300px;
+}
