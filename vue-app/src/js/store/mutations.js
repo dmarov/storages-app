@@ -4,6 +4,7 @@ export default {
 
         if (!state.initialized) {
 
+            state.initialized = true;
             state.params = params;
         }
     },

@@ -579,7 +579,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({});\n\n//# sourceURL=webpack:///./src/js/store/getters.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  getParam: function getParam(state, getters) {\n    return function (name) {\n      return state.params[name];\n    };\n  }\n});\n\n//# sourceURL=webpack:///./src/js/store/getters.js?");
 
 /***/ }),
 
@@ -603,7 +603,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vuex
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({});\n\n//# sourceURL=webpack:///./src/js/store/modules/categories/actions.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nfunction asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }\n\nfunction _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err); } _next(undefined); }); }; }\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  init: function () {\n    var _init = _asyncToGenerator(\n    /*#__PURE__*/\n    regeneratorRuntime.mark(function _callee(context) {\n      var categoriesLink;\n      return regeneratorRuntime.wrap(function _callee$(_context) {\n        while (1) {\n          switch (_context.prev = _context.next) {\n            case 0:\n              categoriesLink = context.rootGetters.getParam('categories-link');\n\n            case 1:\n            case \"end\":\n              return _context.stop();\n          }\n        }\n      }, _callee);\n    }));\n\n    function init(_x) {\n      return _init.apply(this, arguments);\n    }\n\n    return init;\n  }()\n});\n\n//# sourceURL=webpack:///./src/js/store/modules/categories/actions.js?");
 
 /***/ }),
 
@@ -735,7 +735,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  init: function init(state, params) {\n    if (!state.initialized) {\n      state.params = params;\n    }\n  }\n});\n\n//# sourceURL=webpack:///./src/js/store/mutations.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  init: function init(state, params) {\n    if (!state.initialized) {\n      state.initialized = true;\n      state.params = params;\n    }\n  }\n});\n\n//# sourceURL=webpack:///./src/js/store/mutations.js?");
 
 /***/ }),
 
@@ -747,7 +747,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  initialized: true,\n  params: {}\n});\n\n//# sourceURL=webpack:///./src/js/store/state.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  initialized: false,\n  params: {}\n});\n\n//# sourceURL=webpack:///./src/js/store/state.js?");
 
 /***/ }),
 

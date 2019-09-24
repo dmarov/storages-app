@@ -1,5 +1,5 @@
 export default {
 
-    initialized: true,
+    initialized: false,
     params: {},
 };
