@@ -24,8 +24,8 @@ export default async function(url, params = {}, key = 'token') {
 
     } finally {
 
-        let headersObj = Object.isObject(params.headers) ? params.headers : {};
-        headersObj = {...headersObj, 'Authorization': 'Bearer ' + token };
+        let headersObj = params.headers instanceof Object ? params.headers : {};
+        headersObj = {...headersObj, 'Authorization': 'Basic ' + token };
 
         params.headers = new Headers(headersObj);
         let response = await fetch(url, params);
