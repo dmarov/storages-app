@@ -129,7 +129,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \".menu__items {\\n  display: flex;\\n  justify-content: space-around;\\n  padding: 0; }\\n\\n.menu__item {\\n  list-style-type: none;\\n  flex-grow: 1;\\n  display: flex;\\n  justify-content: center;\\n  padding: 1em; }\\n\\n.content {\\n  height: 100%;\\n  overflow-y: auto; }\\n\\nbody {\\n  background-color: #FFFFF7;\\n  display: flex;\\n  justify-content: center;\\n  height: 100vh; }\\n\\n.container {\\n  width: 1300px;\\n  display: flex;\\n  flex-direction: column; }\\n  .container .container__el_pointable {\\n    cursor: pointer; }\\n  .container .container__el_nolink:link {\\n    text-decoration: inherit;\\n    color: inherit;\\n    cursor: inherit; }\\n  .container .container__el_nolink:visited {\\n    text-decoration: inherit;\\n    color: inherit;\\n    cursor: inherit; }\\n\", \"\"]);\n\n\n//# sourceURL=webpack:///./src/sass/index.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js");
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \".menu__items {\\n  display: flex;\\n  justify-content: space-around;\\n  padding: 0; }\\n\\n.menu__item {\\n  list-style-type: none;\\n  flex-grow: 1;\\n  display: flex;\\n  justify-content: center;\\n  padding: 1em; }\\n\\n.content {\\n  height: 100%;\\n  overflow-y: auto; }\\n\\nbody {\\n  background-color: #FFFFF7;\\n  display: flex;\\n  justify-content: center;\\n  height: 100vh; }\\n\\n.container {\\n  width: 1300px;\\n  display: flex;\\n  flex-direction: column;\\n  color: #242424; }\\n  .container .container__el_pointable {\\n    cursor: pointer; }\\n  .container .container__el_nolink:link {\\n    text-decoration: inherit;\\n    color: inherit;\\n    cursor: inherit; }\\n  .container .container__el_nolink:visited {\\n    text-decoration: inherit;\\n    color: inherit;\\n    cursor: inherit; }\\n\", \"\"]);\n\n\n//# sourceURL=webpack:///./src/sass/index.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -233,7 +233,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _vm._m(0)\n}\nvar staticRenderFns = [\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"nav\", { staticClass: \"menu\" }, [\n      _c(\"ul\", { staticClass: \"menu__items\" }, [\n        _c(\"li\", { staticClass: \"menu__item container__el_pointable\" }, [\n          _c(\n            \"a\",\n            {\n              staticClass: \"menu__link container__el_nolink\",\n              attrs: { href: \"#\" }\n            },\n            [_vm._v(\"Products\")]\n          )\n        ]),\n        _c(\"li\", { staticClass: \"menu__item container__el_pointable\" }, [\n          _c(\n            \"a\",\n            {\n              staticClass: \"menu__link container__el_nolink\",\n              attrs: { href: \"#\" }\n            },\n            [_vm._v(\"Categories\")]\n          )\n        ])\n      ])\n    ])\n  }\n]\nrender._withStripped = true\n\n\n\n//# sourceURL=webpack:///./src/js/components/menu.vue?./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/vue-loader/lib??vue-loader-options");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _vm._m(0)\n}\nvar staticRenderFns = [\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"nav\", { staticClass: \"menu\" }, [\n      _c(\"ul\", { staticClass: \"menu__items\" }, [\n        _c(\"li\", { staticClass: \"menu__item container__el_pointable\" }, [\n          _c(\n            \"a\",\n            {\n              staticClass: \"menu__link container__el_nolink\",\n              attrs: { href: \"#\" }\n            },\n            [_vm._v(\"Categories\")]\n          )\n        ]),\n        _c(\"li\", { staticClass: \"menu__item container__el_pointable\" }, [\n          _c(\n            \"a\",\n            {\n              staticClass: \"menu__link container__el_nolink\",\n              attrs: { href: \"#\" }\n            },\n            [_vm._v(\"Products\")]\n          )\n        ])\n      ])\n    ])\n  }\n]\nrender._withStripped = true\n\n\n\n//# sourceURL=webpack:///./src/js/components/menu.vue?./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/vue-loader/lib??vue-loader-options");
 
 /***/ }),
 
@@ -436,7 +436,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue_
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  init: function init(context, params) {\n    context.commit('init', params);\n  }\n});\n\n//# sourceURL=webpack:///./src/js/store/actions.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  init: function init(context, params) {\n    context.commit('init', params);\n    context.dispatch('categories/init');\n  }\n});\n\n//# sourceURL=webpack:///./src/js/store/actions.js?");
 
 /***/ }),
 
@@ -464,6 +464,66 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vuex
 
 /***/ }),
 
+/***/ "./src/js/store/modules/categories/actions.js":
+/*!****************************************************!*\
+  !*** ./src/js/store/modules/categories/actions.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({});\n\n//# sourceURL=webpack:///./src/js/store/modules/categories/actions.js?");
+
+/***/ }),
+
+/***/ "./src/js/store/modules/categories/getters.js":
+/*!****************************************************!*\
+  !*** ./src/js/store/modules/categories/getters.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({});\n\n//# sourceURL=webpack:///./src/js/store/modules/categories/getters.js?");
+
+/***/ }),
+
+/***/ "./src/js/store/modules/categories/index.js":
+/*!**************************************************!*\
+  !*** ./src/js/store/modules/categories/index.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./state */ \"./src/js/store/modules/categories/state.js\");\n/* harmony import */ var _getters__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./getters */ \"./src/js/store/modules/categories/getters.js\");\n/* harmony import */ var _mutations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./mutations */ \"./src/js/store/modules/categories/mutations.js\");\n/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./actions */ \"./src/js/store/modules/categories/actions.js\");\n\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  namespaced: true,\n  state: _state__WEBPACK_IMPORTED_MODULE_0__[\"default\"],\n  getters: _getters__WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n  mutations: _mutations__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n  actions: _actions__WEBPACK_IMPORTED_MODULE_3__[\"default\"]\n});\n\n//# sourceURL=webpack:///./src/js/store/modules/categories/index.js?");
+
+/***/ }),
+
+/***/ "./src/js/store/modules/categories/mutations.js":
+/*!******************************************************!*\
+  !*** ./src/js/store/modules/categories/mutations.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({});\n\n//# sourceURL=webpack:///./src/js/store/modules/categories/mutations.js?");
+
+/***/ }),
+
+/***/ "./src/js/store/modules/categories/state.js":
+/*!**************************************************!*\
+  !*** ./src/js/store/modules/categories/state.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({});\n\n//# sourceURL=webpack:///./src/js/store/modules/categories/state.js?");
+
+/***/ }),
+
 /***/ "./src/js/store/modules/index.js":
 /*!***************************************!*\
   !*** ./src/js/store/modules/index.js ***!
@@ -472,7 +532,67 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vuex
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({});\n\n//# sourceURL=webpack:///./src/js/store/modules/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _categories__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./categories */ \"./src/js/store/modules/categories/index.js\");\n/* harmony import */ var _products__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./products */ \"./src/js/store/modules/products/index.js\");\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  categories: _categories__WEBPACK_IMPORTED_MODULE_0__[\"default\"],\n  products: _products__WEBPACK_IMPORTED_MODULE_1__[\"default\"]\n});\n\n//# sourceURL=webpack:///./src/js/store/modules/index.js?");
+
+/***/ }),
+
+/***/ "./src/js/store/modules/products/actions.js":
+/*!**************************************************!*\
+  !*** ./src/js/store/modules/products/actions.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({});\n\n//# sourceURL=webpack:///./src/js/store/modules/products/actions.js?");
+
+/***/ }),
+
+/***/ "./src/js/store/modules/products/getters.js":
+/*!**************************************************!*\
+  !*** ./src/js/store/modules/products/getters.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({});\n\n//# sourceURL=webpack:///./src/js/store/modules/products/getters.js?");
+
+/***/ }),
+
+/***/ "./src/js/store/modules/products/index.js":
+/*!************************************************!*\
+  !*** ./src/js/store/modules/products/index.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./state */ \"./src/js/store/modules/products/state.js\");\n/* harmony import */ var _getters__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./getters */ \"./src/js/store/modules/products/getters.js\");\n/* harmony import */ var _mutations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./mutations */ \"./src/js/store/modules/products/mutations.js\");\n/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./actions */ \"./src/js/store/modules/products/actions.js\");\n\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  namespaced: true,\n  state: _state__WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n  getters: _getters__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n  mutations: _mutations__WEBPACK_IMPORTED_MODULE_3__[\"default\"],\n  actions: _actions__WEBPACK_IMPORTED_MODULE_4__[\"default\"]\n});\n\n//# sourceURL=webpack:///./src/js/store/modules/products/index.js?");
+
+/***/ }),
+
+/***/ "./src/js/store/modules/products/mutations.js":
+/*!****************************************************!*\
+  !*** ./src/js/store/modules/products/mutations.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({});\n\n//# sourceURL=webpack:///./src/js/store/modules/products/mutations.js?");
+
+/***/ }),
+
+/***/ "./src/js/store/modules/products/state.js":
+/*!************************************************!*\
+  !*** ./src/js/store/modules/products/state.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({});\n\n//# sourceURL=webpack:///./src/js/store/modules/products/state.js?");
 
 /***/ }),
 
@@ -496,7 +616,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  initialized: true,\n  params: {}\n});\n\n//# sourceURL=webpack:///./src/js/store/state.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  initialized: true,\n  params: {},\n  username: undefined,\n  password: undefined\n});\n\n//# sourceURL=webpack:///./src/js/store/state.js?");
 
 /***/ }),
 
