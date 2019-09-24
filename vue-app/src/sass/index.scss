@@ -1,4 +1,5 @@
 @import "const/_colors.scss";
+@import "components/_menu.scss";
 
 body {
     background-color: $col-white;
@@ -9,4 +10,26 @@ body {
 .container {
 
     width: 1300px;
+    display: flex;
+    flex-direction: column;
+
+    .container__el_pointable {
+
+        cursor: pointer;
+    }
+
+    .container__el_nolink {
+
+        &:link {
+            text-decoration: inherit;
+            color: inherit;
+            cursor: inherit;
+        }
+
+        &:visited {
+            text-decoration: inherit;
+            color: inherit;
+            cursor: inherit;
+        }
+    }
 }
