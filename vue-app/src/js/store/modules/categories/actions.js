@@ -1,4 +1,5 @@
 
+import authfetch from '../../../lib/authfetch';
 
 
 export default {

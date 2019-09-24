@@ -3,6 +3,7 @@ import { mapGetters, mapActions } from 'vuex';
 
 export default {
 
+    name: 'auth',
     data: _ => {
         return {
             username: undefined,
@@ -23,6 +24,8 @@ export default {
 
             let token = btoa(this.username + ':' + this.password);
             this.setAuthToken(token);
+
+            this.$emit('close');
         }
     },
     created() {
