@@ -3,6 +3,8 @@ import App from './components/layout';
 import store from './store';
 import { mapActions } from 'vuex';
 
+import '../sass/index.scss';
+
 const el = document.querySelector("#app");
 
 new Vue({
