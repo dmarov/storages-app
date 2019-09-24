@@ -2,8 +2,11 @@ import Vue from 'vue';
 import App from './components/layout';
 import store from './store';
 import { mapActions } from 'vuex';
+import VModal from 'vue-js-modal'
 
 import '../sass/index.scss';
+
+Vue.use(VModal, { dynamic: true, injectModalsContainer: true });
 
 const el = document.querySelector("#app");
 
