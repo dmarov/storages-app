@@ -20,7 +20,7 @@ Noty.overrideDefaults({
     timeout: 2000,
 });
 
-Vue.use(VModal, { dynamic: true, injectModalsContainer: true });
+Vue.use(VModal, { dialog: true, dynamic: true, injectModalsContainer: true });
 Vue.use(VueRouter);
 
 const el = document.querySelector("#app");

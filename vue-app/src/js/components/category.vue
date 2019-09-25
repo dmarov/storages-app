@@ -50,7 +50,22 @@ export default {
         toggleEdit() {
 
             this.editable = !this.editable;
-        }
+        },
+        openDeletePopup() {
+
+            this.$modal.show('dialog', {
+                title: 'delete category',
+                text: 'Are you sure about that?',
+                buttons: [
+                    { title: "Yes", handler: this.deleteCategory },
+                    { title: "No" },
+                ],
+            });
+        },
+        deleteCategory() {
+        
+            console.log('ok');
+        },
     },
 }
 
@@ -61,6 +76,8 @@ export default {
     .category
         input.category__title(v-model="title" :disabled="!editable")
         input.category__description(v-model="description" :disabled="!editable")
-        button.category__edit(@click='toggleEdit()') {{ editable == true ? 'end editing' : 'edit' }}
+        button.category__button.category__button_delete(@click='toggleEdit()') {{ editable == true ? 'end editing' : 'edit' }}
+        button.category__button.category__button_delete(@click='openDeletePopup()') Delete
+        v-dialog
 
 </template>
