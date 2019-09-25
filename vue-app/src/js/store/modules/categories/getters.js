@@ -4,4 +4,15 @@ export default {
 
         return _ => state.categories;
     },
+    getCategory(state, getters) {
+
+        return id => {
+
+            try {
+
+                return getters.getCategories()._embedded.items.find(item => item.id === id);
+
+            } catch (e) {}
+        }
+    }
 };

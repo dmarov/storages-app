@@ -1,6 +1,7 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 import Noty from 'noty';
+import Category from './category';
 
 export default {
 
@@ -14,6 +15,9 @@ export default {
         categories() {
             return this.getCategories();
         },
+    },
+    components: {
+        'app-category': Category,
     },
     methods: {
         ...mapActions('categories', [
@@ -44,7 +48,7 @@ export default {
 <template lang='pug'>
 
     .categories-content Categories
-        .categories
-            .category(v-for="category in categories" :key="category.id") {{ category.title }}
+        .categories(v-if="categories")
+            app-category(v-for="category in categories._embedded.items" :key="category.id" :id="category.id")
 
 </template>
