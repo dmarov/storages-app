@@ -4,12 +4,22 @@ import store from './store';
 import { mapActions } from 'vuex';
 import VModal from 'vue-js-modal'
 import VueRouter from 'vue-router';
+import Noty from 'noty';
 
 import CategoriesRoute from './components/categories-route';
 import CategoryProductsRoute from './components/category-products-route';
 import ProductsRoute from './components/products-route';
 
 import '../sass/index.scss';
+
+import "noty/src/noty.scss";
+import "noty/src/themes/sunset.scss";
+
+Noty.overrideDefaults({
+    layout: 'topRight',
+    theme: 'sunset',
+    timeout: 2000,
+});
 
 Vue.use(VModal, { dynamic: true, injectModalsContainer: true });
 Vue.use(VueRouter);
