@@ -16,7 +16,9 @@ class CustomRestMvcConfiguration {
             public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
                 config.setBasePath("/api")
                     .setDefaultPageSize(10)
-                    .setMaxPageSize(1000);
+                    .setMaxPageSize(1000)
+                    .exposeIdsFor(dvmarov.app.models.Category.class)
+                    .exposeIdsFor(dvmarov.app.models.Product.class);
             }
         };
     }

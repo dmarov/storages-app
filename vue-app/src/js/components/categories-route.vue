@@ -8,6 +8,12 @@ export default {
         ...mapGetters([
             'getParam'
         ]),
+        ...mapGetters('categories', [
+            'getCategories'
+        ]),
+        categories() {
+            return this.getCategories();
+        },
     },
     methods: {
         ...mapActions('categories', [
@@ -38,5 +44,7 @@ export default {
 <template lang='pug'>
 
     .categories-content Categories
+        .categories
+            .category(v-for="category in categories" :key="category.id") {{ category.title }}
 
 </template>
