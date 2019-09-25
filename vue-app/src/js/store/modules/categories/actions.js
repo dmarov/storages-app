@@ -25,5 +25,34 @@ export default {
 
             } else throw e;
         }
-    }
+    },
+    async patchCategory(context, { id, patch }) {
+
+        let category = context.getters.getCategory(id);
+        let link = category._links.self.href;
+
+        let options = {
+            method: 'PATCH',
+            headers: new Headers({
+                "content-type": "application/patch+json",
+            }),
+            body: JSON.stringify(patch),
+        };
+
+        try {
+
+            let response = await authfetch(link, options);
+
+        } catch(e) {
+
+            if (e.name == "AuthError") {
+
+                new Noty({
+                    text: e.message,
+                    type: "error",
+                }).show();
+
+            } else throw e;
+        }
+    },
 };

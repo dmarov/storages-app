@@ -24,7 +24,8 @@ export default async function(url, params = {}, key = 'token') {
 
     } finally {
 
-        let headersObj = params.headers instanceof Object ? params.headers : {};
+        let headersObj = params.headers ? params.headers : {};
+        // console.log(headersObj);
         headersObj = {...headersObj, 'Authorization': 'Basic ' + token };
 
         params.headers = new Headers(headersObj);

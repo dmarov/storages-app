@@ -13,6 +13,35 @@ export default {
         category() {
             return this.getCategory(this.id);
         },
+        title: {
+            get() {
+                return this.category.title;
+            },
+            set(value) {
+
+                this.patchCategory({
+                    id: this.id,
+                    patch: [{ op: 'add', path: "/title", value }],
+                });
+            },
+        },
+        description: {
+            get() {
+                return this.category.description;
+            },
+            set(value) {
+
+                this.patchCategory({
+                    id: this.id,
+                    patch: [{ op: 'add', path: "/description", value }],
+                });
+            },
+        },
+    },
+    methods: {
+        ...mapActions('categories', [
+            'patchCategory',
+        ]),
     },
 }
 
@@ -21,7 +50,7 @@ export default {
 <template lang='pug'>
 
     .category
-        .category__title {{ category.title }}
-        .category__description {{ category.description }}
+        input.category__title(v-model="title")
+        input.category__description(v-model="description")
 
 </template>
