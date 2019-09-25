@@ -10,10 +10,9 @@ import CategoriesRoute from './components/categories-route';
 import CategoryProductsRoute from './components/category-products-route';
 import ProductsRoute from './components/products-route';
 
-import '../sass/index.scss';
-
 import "noty/src/noty.scss";
 import "noty/src/themes/sunset.scss";
+import '../sass/index.scss';
 
 Noty.overrideDefaults({
     layout: 'topRight',

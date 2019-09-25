@@ -1,7 +1,6 @@
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 import Noty from 'noty';
-import authfetch from '../lib/authfetch';
 
 export default {
 
@@ -11,27 +10,13 @@ export default {
         ]),
     },
     methods: {
+        ...mapActions('categories', [
+            'setCategoriesPage',
+        ]),
         async setPage(page) {
 
-            let link = this.getParam('categories-link');
-            let url = new URL(link, location.origin);
-            url.searchParams.set('page', page - 1);
+            this.setCategoriesPage(page);
 
-            try {
-                let response = await authfetch(url);
-                let result = await response.json();
-
-                console.log(result);
-            } catch(e) {
-
-                if (e.name == "AuthError") {
-
-                    new Noty({
-                        text: e.message,
-                        type: "error",
-                    }).show();
-                } else throw e;
-            }
         },
     },
     created() {
