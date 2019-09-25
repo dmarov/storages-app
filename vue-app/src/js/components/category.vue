@@ -6,6 +6,11 @@ export default {
     props: [
         'id',
     ],
+    data: _ => {
+        return  {
+            editable: false,
+        };
+    },
     computed: {
         ...mapGetters('categories', [
             'getCategory'
@@ -42,6 +47,10 @@ export default {
         ...mapActions('categories', [
             'patchCategory',
         ]),
+        toggleEdit() {
+
+            this.editable = !this.editable;
+        }
     },
 }
 
@@ -50,7 +59,8 @@ export default {
 <template lang='pug'>
 
     .category
-        input.category__title(v-model="title")
-        input.category__description(v-model="description")
+        input.category__title(v-model="title" :disabled="!editable")
+        input.category__description(v-model="description" :disabled="!editable")
+        button.category__edit(@click='toggleEdit()') {{ editable == true ? 'end editing' : 'edit' }}
 
 </template>

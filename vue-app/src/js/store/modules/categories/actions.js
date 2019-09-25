@@ -43,6 +43,9 @@ export default {
 
             let response = await authfetch(link, options);
 
+            if (response.ok)
+                context.commit('patchCategory', { id, patch });
+
         } catch(e) {
 
             if (e.name == "AuthError") {

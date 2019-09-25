@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "json-patch": "^0.7.0"
+  }
+}
