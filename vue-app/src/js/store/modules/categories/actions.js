@@ -58,4 +58,38 @@ export default {
             } else throw e;
         }
     },
+    async refreshCategories(context) {
+
+        let categories = context.getters.getCategories();
+        let page = categories.page.number;
+        context.dispatch('setCategoriesPage', page + 1);
+    },
+    async deleteCategory(context, id) {
+
+        let category = context.getters.getCategory(id);
+        let link = category._links.self.href;
+
+        let options = {
+            method: 'DELETE',
+        };
+
+        try {
+
+            let response = await authfetch(link, options);
+
+            if (response.ok)
+                context.dispatch('refreshCategories');
+
+        } catch(e) {
+
+            if (e.name == "AuthError") {
+
+                new Noty({
+                    text: e.message,
+                    type: "error",
+                }).show();
+
+            } else throw e;
+        }
+    }
 };

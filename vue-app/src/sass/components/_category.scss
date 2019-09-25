@@ -1,5 +1,13 @@
 .category {
 
     display: flex;
+    padding-bottom: 5px;
 
+    &__description {
+        flex-grow: 1;
+    }
+
+    &__button {
+        width: 7em;
+    }
 }

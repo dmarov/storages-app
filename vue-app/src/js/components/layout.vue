@@ -19,4 +19,5 @@ export default {
         app-menu
         .content
             router-view
+        v-dialog
 </template>

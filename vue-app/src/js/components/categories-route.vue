@@ -47,7 +47,7 @@ export default {
 
 <template lang='pug'>
 
-    .categories-content Categories
+    .categories-content
         .categories(v-if="categories")
             app-category(v-for="category in categories._embedded.items" :key="category.id" :id="category.id")
 

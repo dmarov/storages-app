@@ -46,6 +46,7 @@ export default {
     methods: {
         ...mapActions('categories', [
             'patchCategory',
+            'deleteCategory',
         ]),
         toggleEdit() {
 
@@ -57,14 +58,14 @@ export default {
                 title: 'delete category',
                 text: 'Are you sure about that?',
                 buttons: [
-                    { title: "Yes", handler: this.deleteCategory },
-                    { title: "No" },
+                    { title: "Yes", handler: _ => { this.delete(); this.$modal.hide('dialog'); }},
+                    { title: "No", handler: _ => { this.$modal.hide('dialog'); }},
                 ],
             });
         },
-        deleteCategory() {
-        
-            console.log('ok');
+        delete() {
+
+            this.deleteCategory(this.id);
         },
     },
 }
@@ -75,9 +76,9 @@ export default {
 
     .category
         input.category__title(v-model="title" :disabled="!editable")
-        input.category__description(v-model="description" :disabled="!editable")
-        button.category__button.category__button_delete(@click='toggleEdit()') {{ editable == true ? 'end editing' : 'edit' }}
+        textarea.category__description(v-model="description" :disabled="!editable")
+        button.category__button.category__button_delete(@click='toggleEdit()') {{ editable == true ? 'finish editing' : 'edit' }}
         button.category__button.category__button_delete(@click='openDeletePopup()') Delete
-        v-dialog
+        button.category__button(@click="$router.push(`/categories/${id}/products`)") Show products
 
 </template>
