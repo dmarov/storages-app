@@ -34,7 +34,7 @@ export default {
         let options = {
             method: 'PATCH',
             headers: new Headers({
-                "content-type": "application/patch+json",
+                "content-type": "application/json-patch+json",
             }),
             body: JSON.stringify(patch),
         };

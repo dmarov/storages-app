@@ -24,11 +24,11 @@ export default async function(url, params = {}, key = 'token') {
 
     } finally {
 
-        let headersObj = params.headers ? params.headers : {};
-        // console.log(headersObj);
-        headersObj = {...headersObj, 'Authorization': 'Basic ' + token };
+        if (!params.headers)
+            params.headers = new Headers();
 
-        params.headers = new Headers(headersObj);
+        params.headers.set('Authorization', 'Basic ' + token);
+
         let response = await fetch(url, params);
 
         if (response.status == 401) throw new AuthError();
