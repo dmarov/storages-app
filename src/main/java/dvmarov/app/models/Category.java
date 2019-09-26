@@ -16,17 +16,13 @@ public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
     private long id;
 
-    @Column
     private String title;
 
-    @Column
     private String description;
 
     @OneToMany(mappedBy = "category")
-    @Column
     private List<Product> products;
 
     public long getId() {

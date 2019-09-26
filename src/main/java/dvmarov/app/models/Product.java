@@ -16,22 +16,16 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
     private long id;
 
-    @Column
     private String title;
 
-    @Column
     private String description;
 
-    @Column
     private Double price;
 
-    @Column
     private Integer count;
 
-    @Column
     private String imageUrl;
 
     @ManyToOne
