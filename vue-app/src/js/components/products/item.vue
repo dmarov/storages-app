@@ -70,6 +70,25 @@ export default {
                 });
             },
         },
+        imageUrl: {
+
+            get() {
+                return this.product.imageUrl;
+            },
+            set(value) {
+
+                this.patchProduct({
+                    id: this.id,
+                    patch: [{ op: 'add', path: "/imageUrl", value }],
+                });
+            },
+        },
+        imageStyle() {
+
+            return {
+                "background-image": `url(${this.imageUrl})`
+            };
+        },
     },
     methods: {
         ...mapActions('products', [
@@ -107,6 +126,7 @@ export default {
         textarea.product__description(v-model="description" :disabled="!editable")
         input.product__price(v-model="price" :disabled="!editable")
         input.product__count(v-model="count" :disabled="!editable")
+        .product__image(:style="imageStyle")
         button.product__button.product__button_delete(@click='toggleEdit()') {{ editable == true ? 'finish editing' : 'edit' }}
         button.product__button.product__button_delete(@click='openDeletePopup()') Delete
 
