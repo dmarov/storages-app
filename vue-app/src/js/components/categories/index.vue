@@ -1,7 +1,7 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 import Noty from 'noty';
-import Category from './category';
+import Category from './item';
 import NewCategory from './creator';
 import Pagination from './pagination';
 import Sorting from './sorting';

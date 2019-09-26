@@ -3,9 +3,9 @@ import Noty from 'noty';
 
 export default {
 
-    async setProductsPage(context, page) {
+    async setCategoriesPage(context, page) {
 
-        let link = context.rootGetters.getParam('products-link');
+        let link = context.rootGetters.getParam('categories-link');
         let url = new URL(link, location.origin);
         url.searchParams.set('page', page - 1);
         url.searchParams.set('sort', context.getters.getSorting());
@@ -14,7 +14,7 @@ export default {
 
             let response = await authfetch(url);
             let result = await response.json();
-            context.commit('setProducts', result);
+            context.commit('setCategories', result);
 
         } catch(e) {
 
@@ -28,10 +28,10 @@ export default {
             } else throw e;
         }
     },
-    async patchProduct(context, { id, patch }) {
+    async patchCategory(context, { id, patch }) {
 
-        let product = context.getters.getProduct(id);
-        let link = product._links.self.href;
+        let category = context.getters.getCategory(id);
+        let link = category._links.self.href;
 
         let options = {
             method: 'PATCH',
@@ -46,7 +46,7 @@ export default {
             let response = await authfetch(link, options);
 
             if (response.ok)
-                context.commit('patchProduct', { id, patch });
+                context.commit('patchCategory', { id, patch });
 
         } catch(e) {
 
@@ -60,16 +60,16 @@ export default {
             } else throw e;
         }
     },
-    async refreshProducts(context) {
+    async refreshCategories(context) {
 
-        let products = context.getters.getProducts();
-        let page = products.page.number;
-        context.dispatch('setProductsPage', page + 1);
+        let categories = context.getters.getCategories();
+        let page = categories.page.number;
+        context.dispatch('setCategoriesPage', page + 1);
     },
-    async deleteProduct(context, id) {
+    async deleteCategory(context, id) {
 
-        let product = context.getters.getProduct(id);
-        let link = product._links.self.href;
+        let category = context.getters.getCategory(id);
+        let link = category._links.self.href;
 
         let options = {
             method: 'DELETE',
@@ -80,7 +80,7 @@ export default {
             let response = await authfetch(link, options);
 
             if (response.ok)
-                context.dispatch('refreshProducts');
+                context.dispatch('refreshCategories');
 
         } catch(e) {
 
@@ -92,6 +92,35 @@ export default {
                 }).show();
 
             } else throw e;
+        }
+    },
+    async appendCategory(context, { title, description }) {
+
+        let link = context.rootGetters.getParam('categories-link');
+        let url = new URL(link, location.origin);
+
+        let options = {
+            method: 'POST',
+            headers: new Headers({
+                "content-type": "application/json",
+            }),
+            body: JSON.stringify({
+                title,
+                description,
+            }),
+        };
+
+        let response = await authfetch(url, options);
+        let result = await response.json();
+
+        if (!response.ok) {
+
+            new Noty({
+                text: "unable to append category",
+                type: "error",
+            }).show();
+        } else {
+            context.dispatch('refreshCategories');
         }
     },
     setSorting(context, value) {

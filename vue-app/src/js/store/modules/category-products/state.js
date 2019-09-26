@@ -1,5 +1,5 @@
 export default {
-    products: undefined,
+    categories: undefined,
     sort: [
         'title,asc',
     ],
