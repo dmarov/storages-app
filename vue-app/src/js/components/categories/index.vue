@@ -2,9 +2,9 @@
 import { mapGetters, mapActions } from 'vuex';
 import Noty from 'noty';
 import Category from './category';
-import NewCategory from './new-category';
-import Pagination from './pagination-categories';
-import Sorting from './categories-sorting';
+import NewCategory from './creator';
+import Pagination from './pagination';
+import Sorting from './sorting';
 
 export default {
 

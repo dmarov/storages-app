@@ -6,9 +6,9 @@ import VModal from 'vue-js-modal'
 import VueRouter from 'vue-router';
 import Noty from 'noty';
 
-import CategoriesRoute from './components/categories-route';
-import CategoryProductsRoute from './components/category-products-route';
-import ProductsRoute from './components/products-route';
+import CategoriesRoute from './components/categories';
+import CategoryProductsRoute from './components/category-products';
+import ProductsRoute from './components/products';
 
 import "noty/src/noty.scss";
 import "noty/src/themes/sunset.scss";
