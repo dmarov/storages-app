@@ -13,6 +13,11 @@
     &__item {
         width: 40px;
         height: 40px;
+        border-radius: 20px;
+
+        &_active {
+            background-color: $col-blue;
+        }
     }
 
     &__link {
