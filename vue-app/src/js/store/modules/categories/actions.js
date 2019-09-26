@@ -45,8 +45,15 @@ export default {
 
             let response = await authfetch(link, options);
 
-            if (response.ok)
+            if (response.ok) {
                 context.commit('patchCategory', { id, patch });
+            } else {
+
+                new Noty({
+                    text: "unable to patch category",
+                    type: "error",
+                }).show();
+            }
 
         } catch(e) {
 

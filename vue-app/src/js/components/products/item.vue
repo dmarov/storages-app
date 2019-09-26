@@ -42,6 +42,34 @@ export default {
                 });
             },
         },
+        price: {
+            get() {
+                return this.product.price;
+            },
+            set(value) {
+
+                value = parseFloat(value);
+
+                this.patchProduct({
+                    id: this.id,
+                    patch: [{ op: 'add', path: "/price", value }],
+                });
+            },
+        },
+        count: {
+            get() {
+                return this.product.count;
+            },
+            set(value) {
+
+                value = parseInt(value);
+
+                this.patchProduct({
+                    id: this.id,
+                    patch: [{ op: 'add', path: "/count", value }],
+                });
+            },
+        },
     },
     methods: {
         ...mapActions('products', [
@@ -77,8 +105,9 @@ export default {
     .product
         input.product__title(v-model="title" :disabled="!editable")
         textarea.product__description(v-model="description" :disabled="!editable")
+        input.product__price(v-model="price" :disabled="!editable")
+        input.product__count(v-model="count" :disabled="!editable")
         button.product__button.product__button_delete(@click='toggleEdit()') {{ editable == true ? 'finish editing' : 'edit' }}
         button.product__button.product__button_delete(@click='openDeletePopup()') Delete
-        button.product__button(@click="$router.push(`/products/${id}/products`)") Show products
 
 </template>

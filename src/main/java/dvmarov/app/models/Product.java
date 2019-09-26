@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.ManyToOne;
 import javax.persistence.JoinColumn;
+import javax.persistence.Column;
 import java.util.List;
 
 @Entity
@@ -15,12 +16,22 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private long id;
 
+    @Column
     private String title;
+
+    @Column
     private String description;
+
+    @Column
     private String price;
+
+    @Column
     private Integer count;
+
+    @Column
     private String imageUrl;
 
     @ManyToOne

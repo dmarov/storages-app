@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.OneToMany;
+import javax.persistence.Column;
 
 import java.util.List;
 
@@ -15,12 +16,17 @@ public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private long id;
 
+    @Column
     private String title;
+
+    @Column
     private String description;
 
     @OneToMany(mappedBy = "category")
+    @Column
     private List<Product> products;
 
     public long getId() {
