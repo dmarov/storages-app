@@ -26,6 +26,7 @@ export default {
             this.setAuthToken(token);
 
             this.$emit('close');
+            location.reload();
         }
     },
     created() {
