@@ -17,6 +17,10 @@ export default {
         categories() {
             return this.getCategories();
         },
+        lastPage() {
+
+            return this.categories.page.totalPages;
+        },
     },
     components: {
         'app-category': Category,
@@ -52,10 +56,10 @@ export default {
 
     .categories-content
         new-category
-        .pagination-wrapper
-            pagination
+        .pagination-wrapper(v-if="categories")
+            pagination(:radius="2" :last-page="lastPage")
         .categories(v-if="categories")
             app-category(v-for="category in categories._embedded.items" :key="category.id" :id="category.id")
-        .pagination-wrapper
-            pagination
+        .pagination-wrapper(v-if="categories")
+            pagination(:radius="2" :last-page="lastPage")
 </template>
