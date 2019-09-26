@@ -14,5 +14,8 @@ export default {
 
             } catch (e) {}
         }
-    }
+    },
+    getSorting(state, getters) {
+        return _ => state.sort;
+    },
 };

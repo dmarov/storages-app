@@ -13,4 +13,8 @@ export default {
         jsonpatch.apply(category, patch);
         items[id] = category;
     },
+    setSorting(state, value) {
+
+        state.sort = value;
+    },
 };

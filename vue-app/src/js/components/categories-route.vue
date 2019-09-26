@@ -4,6 +4,7 @@ import Noty from 'noty';
 import Category from './category';
 import NewCategory from './new-category';
 import Pagination from './pagination-categories';
+import Sorting from './categories-sorting';
 
 export default {
 
@@ -15,6 +16,7 @@ export default {
             'getCategories'
         ]),
         categories() {
+
             return this.getCategories();
         },
         lastPage() {
@@ -26,6 +28,7 @@ export default {
         'app-category': Category,
         'new-category': NewCategory,
         'pagination': Pagination,
+        'sorting': Sorting,
     },
     methods: {
         ...mapActions('categories', [
@@ -58,6 +61,7 @@ export default {
         new-category
         .pagination-wrapper(v-if="categories")
             pagination(:radius="2" :last-page="lastPage")
+        sorting
         .categories(v-if="categories")
             app-category(v-for="category in categories._embedded.items" :key="category.id" :id="category.id")
         .pagination-wrapper(v-if="categories")

@@ -8,6 +8,7 @@ export default {
         let link = context.rootGetters.getParam('categories-link');
         let url = new URL(link, location.origin);
         url.searchParams.set('page', page - 1);
+        url.searchParams.set('sort', context.getters.getSorting());
 
         try {
 
@@ -121,5 +122,9 @@ export default {
         } else {
             context.dispatch('refreshCategories');
         }
+    },
+    setSorting(context, value) {
+
+        context.commit('setSorting', value);
     },
 };
