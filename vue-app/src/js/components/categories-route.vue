@@ -2,6 +2,7 @@
 import { mapGetters, mapActions } from 'vuex';
 import Noty from 'noty';
 import Category from './category';
+import NewCategory from './new-category';
 
 export default {
 
@@ -18,6 +19,7 @@ export default {
     },
     components: {
         'app-category': Category,
+        'new-category': NewCategory,
     },
     methods: {
         ...mapActions('categories', [
@@ -48,6 +50,7 @@ export default {
 <template lang='pug'>
 
     .categories-content
+        new-category
         .categories(v-if="categories")
             app-category(v-for="category in categories._embedded.items" :key="category.id" :id="category.id")
 

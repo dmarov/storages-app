@@ -92,5 +92,34 @@ export default {
 
             } else throw e;
         }
-    }
+    },
+    async appendCategory(context, { title, description }) {
+
+        let link = context.rootGetters.getParam('categories-link');
+        let url = new URL(link, location.origin);
+
+        let options = {
+            method: 'POST',
+            headers: new Headers({
+                "content-type": "application/json",
+            }),
+            body: JSON.stringify({
+                title,
+                description,
+            }),
+        };
+
+        let response = await authfetch(url, options);
+        let result = await response.json();
+
+        if (!response.ok) {
+
+            new Noty({
+                text: "unable to append category",
+                type: "error",
+            }).show();
+        } else {
+            context.dispatch('refreshCategories');
+        }
+    },
 };

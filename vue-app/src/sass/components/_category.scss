@@ -1,3 +1,8 @@
+.categories {
+
+    padding-top: 15px;
+}
+
 .category {
 
     display: flex;
@@ -9,5 +14,18 @@
 
     &__button {
         width: 7em;
+    }
+}
+
+.new-category {
+
+    display: flex;
+
+    &__description {
+        flex-grow: 1;
+    }
+
+    &__button {
+        width: 7em * 3;
     }
 }
