@@ -28,7 +28,7 @@ export default {
     methods: {
         getClass(n) {
             if (n == this.current)
-                return { pagination__link_active: true };
+                return { pagination__item_active: true };
             else
                 return {};
         },
@@ -53,7 +53,7 @@ export default {
 <template lang='pug'>
     .pagination
         .pagination__item(@click='$router.push(`/categories/${Math.max(1, current - 1)}`)')
-            .pagination__link_prev
+            .pagination__link.pagination__link_prev
         .pagination__item(@click='$router.push(`/categories/1`)' :class='getClass(1)')
             .pagination__link 1
         .pagination__item(v-if='(current - radius > 1 + 2)')
@@ -65,5 +65,5 @@ export default {
         .pagination__item(@click='$router.push(`/categories/${last}`)' :class='getClass(last)' v-if='last > 1')
             .pagination__link {{ last }}
         .pagination__item(@click='$router.push(`/categories/${Math.min(last, current + 1)}`)')
-            .pagination__link_next
+            .pagination__link.pagination__link_next
 </template>
