@@ -26,7 +26,7 @@ public class Product {
     private String description;
 
     @Column
-    private String price;
+    private Double price;
 
     @Column
     private Integer count;
@@ -63,12 +63,12 @@ public class Product {
         this.description = description;
     }
 
-    public String getPrice() {
+    public Double getPrice() {
 
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(Double price) {
 
         this.price = price;
     }
