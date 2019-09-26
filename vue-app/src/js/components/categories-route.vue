@@ -3,6 +3,7 @@ import { mapGetters, mapActions } from 'vuex';
 import Noty from 'noty';
 import Category from './category';
 import NewCategory from './new-category';
+import Pagination from './pagination-categories';
 
 export default {
 
@@ -20,6 +21,7 @@ export default {
     components: {
         'app-category': Category,
         'new-category': NewCategory,
+        'pagination': Pagination,
     },
     methods: {
         ...mapActions('categories', [
@@ -28,7 +30,6 @@ export default {
         async setPage(page) {
 
             this.setCategoriesPage(page);
-
         },
     },
     created() {
@@ -51,7 +52,10 @@ export default {
 
     .categories-content
         new-category
+        .pagination-wrapper
+            pagination
         .categories(v-if="categories")
             app-category(v-for="category in categories._embedded.items" :key="category.id" :id="category.id")
-
+        .pagination-wrapper
+            pagination
 </template>
