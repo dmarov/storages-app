@@ -7,11 +7,14 @@ import Sorting from './sorting';
 
 export default {
 
+    props: [
+        'id',
+    ],
     computed: {
         ...mapGetters([
             'getParam'
         ]),
-        ...mapGetters('products', [
+        ...mapGetters('category-products', [
             'getProducts'
         ]),
         products() {
@@ -29,7 +32,7 @@ export default {
         'sorting': Sorting,
     },
     methods: {
-        ...mapActions('products', [
+        ...mapActions('category-products', [
             'setProductsPage',
         ]),
         async setPage(page) {
@@ -40,13 +43,14 @@ export default {
     created() {
 
         let page = this.$route.params.page ? this.$route.params.page : 1;
-        this.setPage(page);
+        let id = this.$route.params.id;
+        this.setPage({ cid: id, page });
     },
     watch: {
         '$route' (to, from) {
 
-            if (to.params.page !== from.params.page)
-                this.setPage(to.params.page);
+            if (to.params.page !== from.params.page || to.params.id !== from.params.id)
+                this.setPage({ cid: to.params.id, page: to.params.page});
         },
     },
 }
@@ -57,10 +61,10 @@ export default {
 
     .products-content
         .pagination-wrapper(v-if="products")
-            pagination(:radius="2" :last-page="lastPage")
+            pagination(:radius="2" :last-page="lastPage" :cid="id")
         sorting
         .products(v-if="products")
             app-product(v-for="product in products._embedded.items" :key="product.id" :id="product.id")
         .pagination-wrapper(v-if="products")
-            pagination(:radius="2" :last-page="lastPage")
+            pagination(:radius="2" :last-page="lastPage" :cid="id")
 </template>

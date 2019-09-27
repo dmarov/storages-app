@@ -1,16 +1,16 @@
 export default {
 
-    getCategories(state, getters) {
+    getProducts(state, getters) {
 
-        return _ => state.categories;
+        return _ => state.products;
     },
-    getCategory(state, getters) {
+    getProduct(state, getters) {
 
         return id => {
 
             try {
 
-                return getters.getCategories()._embedded.items.find(item => item.id === id);
+                return getters.getProducts()._embedded.items.find(item => item.id === id);
 
             } catch (e) {}
         }

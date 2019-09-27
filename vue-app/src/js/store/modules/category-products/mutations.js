@@ -2,16 +2,16 @@ import jsonpatch from 'json-patch';
 
 export default {
 
-    setCategories(state, result) {
+    setProducts(state, result) {
 
-        state.categories = result;
+        state.products = result;
     },
-    patchCategory(state, { id, patch }) {
+    patchProduct(state, { id, patch }) {
 
-        let items = state.categories._embedded.items;
-        let category = items.find(item => item.id === id);
-        jsonpatch.apply(category, patch);
-        items[id] = category;
+        let items = state.products._embedded.items;
+        let product = items.find(item => item.id === id);
+        jsonpatch.apply(product, patch);
+        items[id] = product;
     },
     setSorting(state, value) {
 

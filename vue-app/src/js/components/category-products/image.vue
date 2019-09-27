@@ -7,7 +7,7 @@ export default {
         'id',
     ],
     computed: {
-        ...mapGetters('products', [
+        ...mapGetters('category-products', [
             'getProduct'
         ]),
         product() {
@@ -34,7 +34,7 @@ export default {
         },
     },
     methods: {
-        ...mapActions('products', [
+        ...mapActions('category-products', [
             'patchProduct',
         ]),
     },

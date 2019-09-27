@@ -1,6 +1,6 @@
 <script>
 export default {
-    props: [ 'last-page', 'radius' ],
+    props: [ 'last-page', 'radius', "cid" ],
     data: _ => {
         return {
             current: 1,
@@ -52,18 +52,18 @@ export default {
 </script>
 <template lang='pug'>
     .pagination
-        .pagination__item(@click='$router.push(`/products/${Math.max(1, current - 1)}`)')
+        .pagination__item(@click='$router.push(`/categories/${cid}/products/${Math.max(1, current - 1)}`)')
             .pagination__link.pagination__link_prev
-        .pagination__item(@click='$router.push(`/products/1`)' :class='getClass(1)')
+        .pagination__item(@click='$router.push(`/categories/${cid}/products/1`)' :class='getClass(1)')
             .pagination__link 1
         .pagination__item(v-if='(current - radius > 1 + 2)')
             .pagination__dots ...
-        .pagination__item(v-for='index in range' @click='$router.push(`/products/${index}`)' :class='getClass(index)')
+        .pagination__item(v-for='index in range' @click='$router.push(`/categories/${cid}/products/${index}`)' :class='getClass(index)')
             .pagination__link {{ index }}
         .pagination__item(v-if='(current + radius < last - 2)')
             .pagination__dots ...
-        .pagination__item(@click='$router.push(`/products/${last}`)' :class='getClass(last)' v-if='last > 1')
+        .pagination__item(@click='$router.push(`/categories/${cid}/products/${last}`)' :class='getClass(last)' v-if='last > 1')
             .pagination__link {{ last }}
-        .pagination__item(@click='$router.push(`/products/${Math.min(last, current + 1)}`)')
+        .pagination__item(@click='$router.push(`/categories/${cid}/products/${Math.min(last, current + 1)}`)')
             .pagination__link.pagination__link_next
 </template>
