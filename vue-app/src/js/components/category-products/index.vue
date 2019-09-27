@@ -35,9 +35,9 @@ export default {
         ...mapActions('category-products', [
             'setProductsPage',
         ]),
-        async setPage(page) {
+        async setPage({ cid, page }) {
 
-            this.setProductsPage(page);
+            this.setProductsPage({ cid, page });
         },
     },
     created() {

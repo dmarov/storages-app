@@ -48,6 +48,9 @@ export default {
             'patchCategory',
             'deleteCategory',
         ]),
+        ...mapActions('category-products', [
+            'initCategory',
+        ]),
         toggleEdit() {
 
             this.editable = !this.editable;

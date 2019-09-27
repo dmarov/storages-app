@@ -5,9 +5,7 @@ export default {
 
     async setProductsPage(context, { cid, page }) {
 
-        let category = context.rootGetters.categories.getCategory(cid);
-        let url = new URL(category._links.self.href);
-
+        let url = new URL(`/api/categories/${cid}/products`, location.origin);
         url.searchParams.set('page', page - 1);
         url.searchParams.set('sort', context.getters.getSorting());
 
