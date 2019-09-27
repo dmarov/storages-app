@@ -28,6 +28,7 @@ const el = document.querySelector("#app");
 const routes = [
     { path: '/categories', component: CategoriesRoute },
     { path: '/categories/:page', component: CategoriesRoute },
+    { path: '/categories/:id/products', component: CategoryProductsRoute },
     { path: '/categories/:id/products/:page', component: CategoryProductsRoute },
     { path: '/products', component: ProductsRoute },
     { path: '/products/:page', component: ProductsRoute },
