@@ -135,6 +135,10 @@ export default {
             }).show();
         } else {
             context.dispatch('refreshCategories');
+            new Noty({
+                text: "category created",
+                type: "success",
+            }).show();
         }
     },
     setSorting(context, value) {

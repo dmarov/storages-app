@@ -139,7 +139,12 @@ export default {
                 type: "error",
             }).show();
         } else {
+
             context.dispatch('refreshProducts', { cid: categoryId });
+            new Noty({
+                text: "product created",
+                type: "success",
+            }).show();
         }
     },
     setSorting(context, value) {
