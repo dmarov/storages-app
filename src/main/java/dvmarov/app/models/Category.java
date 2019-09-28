@@ -9,6 +9,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Column;
 
 import java.util.List;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "storage_category")
@@ -18,6 +19,7 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @NotEmpty
     private String title;
 
     private String description;

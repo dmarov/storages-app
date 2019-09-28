@@ -10,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.Column;
 import java.util.List;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "storage_product")
@@ -22,6 +23,7 @@ public class Product {
     @Column(name="category_id")
     private long categoryId;
 
+    @NotEmpty
     private String title;
 
     private String description;
