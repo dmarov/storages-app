@@ -59,9 +59,9 @@ export default {
 
     .categories-content
         new-category
+        sorting
         .pagination-wrapper(v-if="categories")
             pagination(:radius="2" :last-page="lastPage")
-        sorting
         .categories(v-if="categories")
             app-category(v-for="category in categories._embedded.items" :key="category.id" :id="category.id")
         .pagination-wrapper(v-if="categories")

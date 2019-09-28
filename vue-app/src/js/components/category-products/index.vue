@@ -63,9 +63,9 @@ export default {
 
     .products-content
         product-creator
+        sorting
         .pagination-wrapper(v-if="products")
             pagination(:radius="2" :last-page="lastPage")
-        sorting
         .products(v-if="products")
             app-product(v-for="product in products._embedded.items" :key="product.id" :id="product.id")
         .pagination-wrapper(v-if="products")

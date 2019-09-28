@@ -13,6 +13,7 @@
 }
 
 body {
+    background-image: linear-gradient($col-lorange, $col-white);
     background-color: $col-white;
     display: flex;
     justify-content: center;
@@ -46,4 +47,13 @@ body {
             cursor: inherit;
         }
     }
+}
+
+.button {
+
+    color: $col-white;
+    background-color: $col-blue;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 5px outset $col-lblue;
 }

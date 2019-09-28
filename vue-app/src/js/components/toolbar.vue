@@ -22,7 +22,7 @@ export default {
 <template lang='pug'>
 
     .toolbar
-        button.toolbar__button(@click='openLoginPopup()') Login
-        button.toolbar__button(@click='logOut()') Logout
+        button.button.toolbar__button(@click='openLoginPopup()') Login
+        button.button.toolbar__button(@click='logOut()') Logout
 
 </template>
