@@ -9,6 +9,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.JoinColumn;
 import javax.persistence.Column;
 import java.util.List;
+import javax.validation.constraints.Min;
 
 @Entity
 @Table(name = "storage_product")
@@ -25,8 +26,10 @@ public class Product {
 
     private String description;
 
+    @Min(value = 0L)
     private Double price;
 
+    @Min(value = 0L)
     private Integer count;
 
     private String imageUrl;

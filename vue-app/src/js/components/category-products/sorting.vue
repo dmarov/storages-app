@@ -4,8 +4,13 @@ import { mapGetters, mapActions } from 'vuex';
 
 export default {
 
+    data: _ => {
+        return {
+            categoryId: undefined,
+        }
+    },
     computed: {
-        ...mapGetters('products', [
+        ...mapGetters('category-products', [
             'getSorting'
         ]),
         sort: {
@@ -14,15 +19,29 @@ export default {
             },
             set(value) {
                 this.setSorting([value]);
-                this.refreshProducts();
+                this.refreshProducts({ cid: this.categoryId });
             },
         },
     },
     methods: {
-        ...mapActions('products', [
+        ...mapActions('category-products', [
             'setSorting',
             'refreshProducts',
         ]),
+    },
+    watch: {
+        '$route' (to, from) {
+
+            if (to.params.id !== from.params.id)
+                this.categoryId = parseInt(to.params.id);
+        },
+    },
+    created() {
+
+        let cid = this.$route.params.id;
+
+        if (cid !== undefined)
+            this.categoryId = parseInt(cid);
     },
 };
 
