@@ -88,7 +88,14 @@ export default {
             let response = await authfetch(link, options);
 
             if (response.ok)
-                context.dispatch('refreshProducts');
+                context.dispatch('refreshProducts', { cid: product.categoryId });
+            else {
+
+                new Noty({
+                    text: 'unable to delete product',
+                    type: "error",
+                }).show();
+            }
 
         } catch(e) {
 

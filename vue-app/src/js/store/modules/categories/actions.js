@@ -88,6 +88,13 @@ export default {
 
             if (response.ok)
                 context.dispatch('refreshCategories');
+            else {
+            
+                new Noty({
+                    text: 'unable to delete category',
+                    type: "error",
+                }).show();
+            }
 
         } catch(e) {
 

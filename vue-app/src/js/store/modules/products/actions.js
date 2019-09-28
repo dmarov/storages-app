@@ -88,6 +88,13 @@ export default {
 
             if (response.ok)
                 context.dispatch('refreshProducts');
+            else {
+
+                new Noty({
+                    text: 'unable to delete product',
+                    type: "error",
+                }).show();
+            }
 
         } catch(e) {
 
