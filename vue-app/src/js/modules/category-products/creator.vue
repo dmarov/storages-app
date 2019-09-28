@@ -27,6 +27,7 @@ export default {
                 description: this.description,
                 price: parseFloat(this.price),
                 count: parseInt(this.count),
+                imageUrl: this.imageUrl,
             });
         },
     },
