@@ -28,7 +28,7 @@ export default {
 
 </script>
 <template lang="pug">
-    .category-sort
+    .sorting
         select(v-model='sort')
             option(:value="'title,asc'") Title ascending
             option(:value="'title,desc'") Title descending
