@@ -1,9 +1,10 @@
 <script>
 export default {
-    props: [ 'last-page', 'radius', "cid" ],
+    props: [ 'last-page', 'radius' ],
     data: _ => {
         return {
             current: 1,
+            cid: undefined,
         };
     },
     computed: {
@@ -40,13 +41,21 @@ export default {
         '$route' (to, from) {
             if (to.params.page !== from.params.page)
                 this.current = parseInt(to.params.page);
+
+            if (to.params.id !== from.params.id)
+                this.cid = parseInt(to.params.id);
         },
     },
     created() {
 
         let page = this.$route.params.page;
+        let cid = this.$route.params.id;
+
         if (page !== undefined)
             this.current = parseInt(page);
+
+        if (cid !== undefined)
+            this.cid = parseInt(cid);
     },
 };
 </script>

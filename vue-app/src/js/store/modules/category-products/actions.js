@@ -68,7 +68,7 @@ export default {
             } else throw e;
         }
     },
-    async refreshProducts(context, cid) {
+    async refreshProducts(context, { cid }) {
 
         let products = context.getters.getProducts();
         let page = products.page.number;

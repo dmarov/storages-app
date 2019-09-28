@@ -4,13 +4,11 @@ import { mapActions } from 'vuex';
 
 export default {
 
-    props: [
-        'cid',
-    ],
     data: _ => {
 
         return {
             title: '',
+            categoryId: undefined,
             description: '',
             price: 0,
             count: 0,
@@ -25,12 +23,26 @@ export default {
 
             this.appendProduct({
                 title: this.title,
-                categoryId: this.cid,
+                categoryId: this.categoryId,
                 description: this.description,
                 price: parseFloat(this.price),
                 count: parseInt(this.count),
             });
         },
+    },
+    watch: {
+        '$route' (to, from) {
+
+            if (to.params.id !== from.params.id)
+                this.categoryId = parseInt(to.params.id);
+        },
+    },
+    created() {
+
+        let cid = this.$route.params.id;
+
+        if (cid !== undefined)
+            this.categoryId = parseInt(cid);
     },
 };
 
