@@ -50,13 +50,13 @@ public class Category {
         this.description = description;
     }
 
-    public List<Product> getProducts() {
+    // public List<Product> getProducts() {
 
-        return products;
-    }
+    //     return products;
+    // }
 
-    public void setProducts(List<Product> products) {
+    // public void setProducts(List<Product> products) {
 
-        this.products = products;
-    }
+    //     this.products = products;
+    // }
 }

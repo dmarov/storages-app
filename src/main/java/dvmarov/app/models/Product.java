@@ -18,6 +18,9 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Column(name="category_id")
+    private long categoryId;
+
     private String title;
 
     private String description;
@@ -29,12 +32,22 @@ public class Product {
     private String imageUrl;
 
     @ManyToOne
-    @JoinColumn(name="category_id")
+    @JoinColumn(name="category_id", insertable = false, updatable = false)
     private Category category;
 
     public long getId() {
 
         return id;
+    }
+
+    public Long getCategoryId() {
+
+        return categoryId;
+    }
+
+    public void setCategoryId(Long categoryId) {
+
+        this.categoryId = categoryId;
     }
 
     public String getTitle() {
