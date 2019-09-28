@@ -68,11 +68,11 @@ export default {
             } else throw e;
         }
     },
-    async refreshProducts(context) {
+    async refreshProducts(context, cid) {
 
         let products = context.getters.getProducts();
         let page = products.page.number;
-        context.dispatch('setProductsPage', page + 1);
+        context.dispatch('setProductsPage', { cid, page: page + 1 });
     },
     async deleteProduct(context, id) {
 
@@ -100,6 +100,39 @@ export default {
                 }).show();
 
             } else throw e;
+        }
+    },
+    async appendProduct(context, { categoryId, title, description, price, count, imageUrl }) {
+
+        let link = context.rootGetters.getParam('products-link');
+        let url = new URL(link, location.origin);
+
+        let options = {
+            method: 'POST',
+            headers: new Headers({
+                "content-type": "application/json",
+            }),
+            body: JSON.stringify({
+                categoryId,
+                title,
+                description,
+                price,
+                count,
+                imageUrl,
+            }),
+        };
+
+        let response = await authfetch(url, options);
+        let result = await response.json();
+
+        if (!response.ok) {
+
+            new Noty({
+                text: "unable to append product to category",
+                type: "error",
+            }).show();
+        } else {
+            context.dispatch('refreshProducts', { cid: categoryId });
         }
     },
     setSorting(context, value) {

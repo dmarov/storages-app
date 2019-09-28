@@ -4,6 +4,7 @@ import Noty from 'noty';
 import Product from './item';
 import Pagination from './pagination';
 import Sorting from './sorting';
+import ProductCreator from './creator';
 
 export default {
 
@@ -30,6 +31,7 @@ export default {
         'app-product': Product,
         'pagination': Pagination,
         'sorting': Sorting,
+        'product-creator': ProductCreator,
     },
     methods: {
         ...mapActions('category-products', [
@@ -60,6 +62,7 @@ export default {
 <template lang='pug'>
 
     .products-content
+        product-creator(:cid="id")
         .pagination-wrapper(v-if="products")
             pagination(:radius="2" :last-page="lastPage" :cid="id")
         sorting
