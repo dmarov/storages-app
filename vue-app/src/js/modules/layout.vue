@@ -1,7 +1,7 @@
 <script>
 
-import Menu from './menu';
-import Toolbar from './toolbar';
+import Menu from '../components/menu';
+import Toolbar from '../components/toolbar';
 
 export default {
 

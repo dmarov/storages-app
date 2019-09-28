@@ -13,7 +13,7 @@
 }
 
 body {
-    background-image: linear-gradient($col-lorange, $col-white);
+    background-image: linear-gradient($col-lorange, $col-lyellow);
     background-color: $col-white;
     display: flex;
     justify-content: center;
@@ -56,4 +56,8 @@ body {
     font-weight: bold;
     text-transform: uppercase;
     border: 5px outset $col-lblue;
+
+    &:hover {
+        color: $col-lgrey;
+    }
 }

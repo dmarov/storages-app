@@ -1,14 +1,14 @@
 import Vue from 'vue';
-import App from './components/layout';
+import App from './modules/layout';
 import store from './store';
 import { mapActions } from 'vuex';
 import VModal from 'vue-js-modal'
 import VueRouter from 'vue-router';
 import Noty from 'noty';
 
-import CategoriesRoute from './components/categories';
-import CategoryProductsRoute from './components/category-products';
-import ProductsRoute from './components/products';
+import CategoriesRoute from './modules/categories';
+import CategoryProductsRoute from './modules/category-products';
+import ProductsRoute from './modules/products';
 
 import "noty/src/noty.scss";
 import "noty/src/themes/sunset.scss";
