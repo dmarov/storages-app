@@ -89,7 +89,7 @@ const config: webpack.Configuration = {
         extensions: [ '.ts', '.js', '.vue', '.scss', '.css', '.json' ],
     },
     output: {
-        path: path.join(__dirname, '../src/main/resources/public'),
+        path: path.join(__dirname, '../public'),
         filename: '[name].js',
         publicPath: '/',
     }
