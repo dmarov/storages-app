@@ -42,6 +42,6 @@ export default {
     .login-popup
         input.login-popup__field(placeholder="username" v-model="username")
         input.login-popup__field(placeholder="password" type="password" v-model="password")
-        button.login-popup__field(@click='setUser()') Login
+        button.button.login-popup__field(@click='setUser()') Login
 
 </template>
