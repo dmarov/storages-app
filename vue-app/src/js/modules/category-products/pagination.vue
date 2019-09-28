@@ -51,8 +51,8 @@ export default {
         let page = this.$route.params.page;
         let cid = this.$route.params.id;
 
-        if (page !== undefined)
-            this.current = parseInt(page);
+        if (page ===  undefined) page = 1;
+            this.setCurrent(parseInt(page));
 
         if (cid !== undefined)
             this.cid = parseInt(cid);

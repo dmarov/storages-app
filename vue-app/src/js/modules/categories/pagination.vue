@@ -45,8 +45,8 @@ export default {
     created() {
 
         let page = this.$route.params.page;
-        if (page !== undefined)
-            this.current = parseInt(page);
+        if (page ===  undefined) page = 1;
+            this.setCurrent(parseInt(page));
     },
 };
 </script>

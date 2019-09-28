@@ -9,9 +9,9 @@ export default {
 
     nav.menu
         ul.menu__items
-            li.menu__item.container__el_pointable
-                router-link.menu__link.container__el_nolink(to="/categories") Categories
-            li.menu__item.container__el_pointable
-                router-link.menu__link.container__el_nolink(to="/products") Products
+            li.menu__item
+                router-link.container__el_pointable.menu__link.container__el_nolink(to="/categories" exact-active-class="menu__link_active") Categories
+            li.menu__item
+                router-link.container__el_pointable.menu__link.container__el_nolink(to="/products" exact-active-class="menu__link_active") Products
 
 </template>
