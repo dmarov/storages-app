@@ -53,6 +53,6 @@ export default {
         textarea.new-product__description(v-model="description")
         input.new-product__price(v-model="price")
         input.new-product__count(v-model="count")
-        input.new-product__count(v-model="imageUrl")
+        input.new-product__image-url(v-model="imageUrl")
         button.new-product__button(@click="append()") Create
 </template>

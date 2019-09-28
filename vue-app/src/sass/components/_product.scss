@@ -55,3 +55,28 @@
         height: 100%;
     }
 }
+
+.new-product {
+
+    display: flex;
+
+    &__description {
+        flex-grow: 1;
+    }
+
+    &__button {
+        width: 7em;
+    }
+
+    &__image-url {
+        width: 7em + 5em;
+    }
+
+    &__count {
+        width: 5em;
+    }
+
+    &__price {
+        width: 5em;
+    }
+}
